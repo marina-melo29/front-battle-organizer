@@ -1,6 +1,7 @@
 import React from 'react';
 import './Menu.css';
-import Button from '../Button';
+import { StyledButton } from '../StyledComponents';
+import defaultTheme from '../../themes/defaultTheme';
 
 const Menu = () => {
   return (
@@ -9,7 +10,7 @@ const Menu = () => {
         <h2>Battle Organizer</h2>
       </div>
       <div className="menu-links">
-        <Button onClick={() => console.log('Login button clicked')}>Login</Button>
+        <StyledButton theme={defaultTheme} onClick={() => console.log('Login button clicked')}>Login</StyledButton>
       </div>
     </nav>
   );

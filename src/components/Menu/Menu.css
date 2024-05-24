@@ -2,24 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #56387C;
+  padding: 11px 20px;
+  background-color: #281540;
   color: white;
+  padding-left: 30px;
+  box-shadow: 5px 5px 5px #41295f;
 }
 
 .menu-logo h2 {
   margin: 0;
-}
-
-.menu-links button {
-  background-color: #fff;
-  color: #56387C;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.menu-links button:hover {
-  background-color: #ddd;
 }

@@ -1,11 +1,15 @@
 import React from 'react';
-import Menu from '../../components/Menu'; 
+import Menu from '../../components/Menu';
+import { AppContainer } from '../../components/StyledComponents';
+import defaultTheme from '../../themes/defaultTheme';
+import purple_wall from '../../assets/images/backgrounds/purple_wall.jpg';
+
 
 const Home = () => {
   return (
-    <div>
-      <Menu />
-    </div>
+    <AppContainer theme={defaultTheme}>
+      <Menu />      
+    </AppContainer>
   );
 };
 

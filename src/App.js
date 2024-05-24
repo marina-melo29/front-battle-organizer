@@ -3,18 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import './assets/styles/global.css';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { AppContainer } from './components/StyledComponents';
+import defaultTheme from './themes/defaultTheme';
+
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <AppContainer>
+    <ThemeProvider theme={defaultTheme}>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
-      </AppContainer>
     </ThemeProvider>
   );
 };
