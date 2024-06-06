@@ -7,11 +7,29 @@ interface AppContainerProps {
 
 export const AppContainer = styled.div<AppContainerProps>`
   background-image: url(${(props) => props.theme.backgroundImage});
-  width: 100%;
-  height: 100vh;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  color: white;  
+  color: white;
+  overflow: hidden;
+`;
+
+export const AppSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+interface H1Props {
+  theme: Theme;
+}
+
+export const StyledH1 = styled.h1<H1Props>`
+  color: ${(props) => props.theme.color};
+  font-family: ${(props) => props.theme.baseFontFamily};
 `;
 
 interface ButtonProps {
@@ -19,7 +37,7 @@ interface ButtonProps {
 }
 
 export const StyledButton = styled.button<ButtonProps>`
-  font-family: 'Poppins';
+  font-family: ${(props) => props.theme.baseFontFamily};
   font-size:14px;
   font-weight:600;
   letter-spacing:1px;
@@ -41,6 +59,32 @@ export const StyledButton = styled.button<ButtonProps>`
   &:hover {
     color: #ffffff;
     background-color: ${(props) => props.theme.buttonHoverBgColor};
+  }
+
+`;
+
+export const StyledFormButton = styled.button<ButtonProps>`
+  font-family: ${(props) => props.theme.baseFontFamily};
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:1px;
+  border-radius:7px;
+  padding-left:12px;
+  padding-right:12px;
+  padding-top:7px;
+  padding-bottom:7px;
+  color: ${(props) => props.theme.buttonBgColor};
+  background-color: ${(props) => props.theme.formButtonBackgroundColor};
+  outline:none;
+  border:none;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    color: #ffffff;
+    background-color: ${(props) => props.theme.formButtonBackgroundHover};
   }
 
 `;

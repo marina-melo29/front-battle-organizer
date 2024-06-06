@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import './assets/styles/global.css';
 import { ThemeProvider } from './contexts/ThemeContext';
 import defaultTheme from './themes/defaultTheme';
+import Login from './pages/Login';
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
     <ThemeProvider theme={defaultTheme}>
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={ <Home /> } />
+            <Route path="/login" element={ <Login /> } />
           </Routes>
         </div>
     </ThemeProvider>
