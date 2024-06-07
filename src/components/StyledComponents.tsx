@@ -23,14 +23,20 @@ export const AppSection = styled.div`
   align-items: center;
 `;
 
-interface H1Props {
+interface HeaderProps {
   theme: Theme;
 }
 
-export const StyledH1 = styled.h1<H1Props>`
-  color: ${(props) => props.theme.color};
-  font-family: ${(props) => props.theme.baseFontFamily};
-`;
+const createStyledHeader = (element: keyof JSX.IntrinsicElements) => {
+  return styled(element)<HeaderProps>`
+    color: ${(props) => props.theme.color};
+    font-family: ${(props) => props.theme.baseFontFamily};
+  `;
+};
+
+export const StyledH1 = createStyledHeader('h1');
+export const StyledH2 = createStyledHeader('h2');
+export const StyledH3 = createStyledHeader('h3');
 
 interface ButtonProps {
   theme: Theme;

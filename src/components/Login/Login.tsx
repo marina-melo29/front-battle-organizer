@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import './Login.css';
 import defaultTheme from '../../themes/defaultTheme';
-import { AppSection } from '../StyledComponents';
-import { StyledH1 } from '../StyledComponents';
+import { AppSection, StyledH1 } from '../StyledComponents';
 
 interface LoginProps {
   children: ReactNode;

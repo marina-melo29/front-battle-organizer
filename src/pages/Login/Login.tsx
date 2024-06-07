@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StyledLogin from '../../components/Login';
-import { AppContainer } from '../../components/StyledComponents';
-import { StyledFormButton } from '../../components/StyledComponents';
+import { AppContainer, StyledFormButton } from '../../components/StyledComponents';
 import defaultTheme from '../../themes/defaultTheme';
 
 const Login: React.FC = () => {
@@ -13,7 +12,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const path = 'path-route';
+    const path = 'localhost:3000/signin';
 
     const response = await fetch(path, {
       method: 'POST',
