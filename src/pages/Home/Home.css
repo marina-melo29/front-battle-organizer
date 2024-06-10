@@ -1,0 +1,11 @@
+.presentation-container {
+  width: 50%;
+  text-align: center;
+  height: fit-content;
+  text-shadow: 0px 4px 4px #281540;
+}
+
+.image-container {
+  width: 50%;
+  padding-top: 6%;  
+}

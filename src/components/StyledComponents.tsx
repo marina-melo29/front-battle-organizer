@@ -17,20 +17,25 @@ export const AppContainer = styled.div<AppContainerProps>`
   overflow: hidden;
 `;
 
-export const AppSection = styled.div`
+interface SectionProps {
+  alignConf: string;
+}
+
+export const AppSection = styled.div<SectionProps>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => props.alignConf};
   align-items: center;
 `;
 
 interface HeaderProps {
-  theme: Theme;
+  color?: string;
+  baseFontFamily?: string;
 }
 
 const createStyledHeader = (element: keyof JSX.IntrinsicElements) => {
   return styled(element)<HeaderProps>`
-    color: ${(props) => props.theme.color};
-    font-family: ${(props) => props.theme.baseFontFamily};
+    color: ${(props) => props.color || '#422b5e'};
+    font-family: ${(props) => props.baseFontFamily || 'Poppins'};
   `;
 };
 
@@ -103,4 +108,15 @@ export const BaseSection = styled.section`
   border-radius: 3px;
   padding: 20px;
   box-shadow: inset 0px 6px 12px #41295f;
+`;
+
+
+// Home
+
+export const PresentationImage = styled.div<AppContainerProps>`
+  background-image: url(${(props) => props.theme.homePresentationImage});
+  height: 500px;
+  background-repeat: no-repeat;
+  width: auto;
+  background-position: right;  
 `;

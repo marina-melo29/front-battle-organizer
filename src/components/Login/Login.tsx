@@ -9,7 +9,7 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ children }) => {
   return (
-    <AppSection>
+    <AppSection alignConf='column'>
       <div className="login-container">
         <StyledH1 theme={defaultTheme}>Login</StyledH1>
         { children }

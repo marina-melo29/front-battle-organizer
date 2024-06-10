@@ -1,4 +1,5 @@
 import backgroundImage from '../assets/images/backgrounds/purple_wpp.png';
+import homePresentationImage from '../assets/images/components/purple_dragon.png';
 
 export interface Theme {
   backgroundImage: string;
@@ -8,6 +9,7 @@ export interface Theme {
   buttonHoverBgColor: string;
   formButtonBackgroundColor: string;
   formButtonBackgroundHover: string;
+  homePresentationImage: string;
 }
 
 const defaultTheme: Theme = {
@@ -21,6 +23,9 @@ const defaultTheme: Theme = {
 
   formButtonBackgroundColor: '#513b6d',
   formButtonBackgroundHover: '#3e295a',
+
+  // home
+  homePresentationImage: homePresentationImage
 };
 
 export default defaultTheme;
