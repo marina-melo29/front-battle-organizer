@@ -10,14 +10,16 @@ export interface Theme {
   formButtonBackgroundColor: string;
   formButtonBackgroundHover: string;
   homePresentationImage: string;
+  baseMenuColor: string;
 }
 
 const defaultTheme: Theme = {
   backgroundImage: backgroundImage,
   color: '#422b5e',
   baseFontFamily: 'Poppins',
-  buttonBgColor: '#FFF',
+  buttonBgColor: '#d5d5d5',
   buttonHoverBgColor: '#3f295b',
+  baseMenuColor: '#281540',
 
   //form styles
 

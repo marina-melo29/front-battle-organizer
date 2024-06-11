@@ -17,6 +17,16 @@ export const AppContainer = styled.div<AppContainerProps>`
   overflow: hidden;
 `;
 
+export const Footer = styled.footer<AppContainerProps>`
+  background-color: ${(props) => props.theme.baseMenuColor};
+  height: auto;
+  min-height: 70px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
 interface SectionProps {
   alignConf: string;
 }
@@ -25,6 +35,7 @@ export const AppSection = styled.div<SectionProps>`
   display: flex;
   flex-direction: ${(props) => props.alignConf};
   align-items: center;
+  height: auto;
 `;
 
 interface HeaderProps {
@@ -50,13 +61,40 @@ interface ButtonProps {
 export const StyledButton = styled.button<ButtonProps>`
   font-family: ${(props) => props.theme.baseFontFamily};
   font-size:14px;
-  font-weight:600;
+  font-weight:800;
   letter-spacing:1px;
   border-radius:7px;
-  padding-left:12px;
-  padding-right:12px;
-  padding-top:7px;
-  padding-bottom:7px;
+  padding-left:14px;
+  padding-right:14px;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-right:20px;
+  color: ${(props) => props.theme.color};
+  background-color: ${(props) => props.theme.buttonBgColor};
+  outline:none;
+  border:none;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration: none;
+  transition: .4s;
+
+  &:hover {
+    color: #ffffff;
+    background-color: ${(props) => props.theme.buttonHoverBgColor};
+  }
+
+`;
+
+export const MenuButton = styled.button<ButtonProps>`
+  font-family: ${(props) => props.theme.baseFontFamily};
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  border-radius:7px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:8px;
+  padding-bottom:8px;
   margin-right:20px;
   color: ${(props) => props.theme.color};
   background-color: ${(props) => props.theme.buttonBgColor};

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Menu.css';
-import { StyledButton } from '../StyledComponents';
+import { MenuButton } from '../StyledComponents';
 import defaultTheme from '../../themes/defaultTheme';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const Menu = () => {
         <h2>Battle Organizer</h2>
       </div>
       <div className="menu-links">
-        <StyledButton theme={defaultTheme} onClick={handleLoginClick}>Login</StyledButton>
+        <MenuButton theme={defaultTheme} onClick={handleLoginClick}>Login</MenuButton>
       </div>
     </nav>
   );
