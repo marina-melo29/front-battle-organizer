@@ -1,5 +1,6 @@
 import backgroundImage from '../assets/images/backgrounds/purple_wpp.png';
 import homePresentationImage from '../assets/images/components/purple_dragon.png';
+import seeMoreImage from '../assets/images/components/menu_dots.png'
 
 export interface Theme {
   backgroundImage: string;
@@ -11,6 +12,7 @@ export interface Theme {
   formButtonBackgroundHover: string;
   homePresentationImage: string;
   baseMenuColor: string;
+  seeMoreImage: string;
 }
 
 const defaultTheme: Theme = {
@@ -21,12 +23,17 @@ const defaultTheme: Theme = {
   buttonHoverBgColor: '#3f295b',
   baseMenuColor: '#281540',
 
-  //form styles
+  // Form styles
 
   formButtonBackgroundColor: '#513b6d',
   formButtonBackgroundHover: '#3e295a',
 
+  // Menu
+
+  seeMoreImage: seeMoreImage,
+
   // home
+
   homePresentationImage: homePresentationImage
 };
 

@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const path = 'localhost:3000/signin';
+    const path = 'http://localhost:3000/signin';
 
     const response = await fetch(path, {
       method: 'POST',
@@ -23,6 +23,10 @@ const Login: React.FC = () => {
     });
 
     if (response.ok) {
+      const data = await response.json();
+      const token = data.token;
+      localStorage.setItem('authToken', token);
+
       navigate('/');
     } else {
       alert('Login Falhou');

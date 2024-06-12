@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <AppContainer theme={defaultTheme}>
       <Menu />
-      <AppSection alignConf='row'>
+      <AppSection align_conf='row'>
         <div className='presentation-container'>
           <StyledH1 color='#CDB5D1'>Crie salas de batalhas</StyledH1>
           <StyledH3 color='#CDB5D1'>Monstros, NPCs</StyledH3>
