@@ -1,6 +1,6 @@
 import backgroundImage from '../assets/images/backgrounds/purple_wpp.png';
 import homePresentationImage from '../assets/images/components/purple_dragon.png';
-import seeMoreImage from '../assets/images/components/menu_dots.png'
+import seeMoreImage from '../assets/images/components/menu.png'
 
 export interface Theme {
   backgroundImage: string;
