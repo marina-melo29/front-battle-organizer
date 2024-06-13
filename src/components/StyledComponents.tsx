@@ -95,7 +95,7 @@ export const StyledFormButton = styled.button<ButtonProps>`
   padding-right:12px;
   padding-top:7px;
   padding-bottom:7px;
-  color: ${(props) => props.theme.buttonBgColor};
+  color: #ffffff;
   background-color: ${(props) => props.theme.formButtonBackgroundColor};
   outline:none;
   border:none;
@@ -105,7 +105,6 @@ export const StyledFormButton = styled.button<ButtonProps>`
   transition: .3s;
 
   &:hover {
-    color: #ffffff;
     background-color: ${(props) => props.theme.formButtonBackgroundHover};
   }
 

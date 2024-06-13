@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoginContainer from '../../components/Login';
-import { AppContainer, StyledFormButton } from '../../components/StyledComponents';
+import { AppContainer, StyledFormButton, StyledH3 } from '../../components/StyledComponents';
 import defaultTheme from '../../themes/defaultTheme';
+import Menu from '../../components/Menu';
+import SignUpContainer from '../../components/SignUp';
 
-const Login: React.FC = () => {
+const SignUp: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [password_confirmation, setPasswordConfirmation] = useState<string>('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const path = 'http://localhost:3000/signin';
+    const path = 'http://localhost:3000/signup';
 
     const response = await fetch(path, {
       method: 'POST',
@@ -35,27 +37,38 @@ const Login: React.FC = () => {
 
   return (
     <AppContainer theme={defaultTheme}>
-      <LoginContainer>
+      <Menu/>
+      <SignUpContainer>
         <form onSubmit={handleSubmit}>
+          <StyledH3>Email:</StyledH3>
           <input 
             type="email" 
-            placeholder="Email" 
+            placeholder="Escolha um email" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
             required
           />
+          <StyledH3>Senha:</StyledH3>
           <input 
             type="password" 
-            placeholder="Senha" 
+            placeholder="Escolha uma senha" 
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
             required
           />
-          <StyledFormButton theme={defaultTheme} type="submit">Entrar</StyledFormButton>
+          <StyledH3>Confirme sua senha:</StyledH3>
+          <input 
+            type="password_confirmation" 
+            placeholder="Confirme sua senha" 
+            value={password_confirmation} 
+            onChange={(e) => setPasswordConfirmation(e.target.value)} 
+            required
+          />
+          <StyledFormButton theme={defaultTheme} type="submit">Cadastrar</StyledFormButton>
         </form>
-      </LoginContainer>
+      </SignUpContainer>
     </AppContainer>
   );
 }
 
-export default Login;
+export default SignUp;
