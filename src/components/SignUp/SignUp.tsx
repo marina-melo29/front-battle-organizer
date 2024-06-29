@@ -3,11 +3,11 @@ import './SignUp.css'
 import defaultTheme from '../../themes/defaultTheme';
 import { AppSection, StyledH1 } from '../StyledComponents';
 
-interface LoginProps {
+interface SignUpProps {
   children: ReactNode;
 }
 
-const SignUp: React.FC<LoginProps> = ({ children }) => {
+const SignUp: React.FC<SignUpProps> = ({ children }) => {
   return (
     <AppSection align_conf='column'>
       <div className='signup-container'>
