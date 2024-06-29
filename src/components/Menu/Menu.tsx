@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Menu.css';
 import defaultTheme from '../../themes/defaultTheme';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { SeeMoreBtn, MenuButton, ExpandedBtnDiv, ExpandedLinks } from './StyledC
 
 const Menu = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
@@ -16,9 +17,28 @@ const Menu = () => {
     navigate('/login');
   };
 
-  const isAuthenticated = () => {
-    return localStorage.getItem('authToken') !== null;
+  const isAuthenticated = async () => {
+    const token = localStorage.getItem('authToken');
+    const path = 'http://localhost:3000/is_authenticated';
+
+    const response = await fetch(path, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+    });
+
+    return response.ok;
   };
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const auth = await isAuthenticated();
+      setAuthenticated(auth);
+    };
+    checkAuth();
+  }, []);
 
   return (
     <nav className="menu">
@@ -26,7 +46,7 @@ const Menu = () => {
         <h2>Battle Organizer</h2>
       </div>
       <div className="menu-links">
-      {isAuthenticated() ? (
+      { authenticated ? (
           <>
             <SeeMoreBtn theme={defaultTheme} onClick={handleProfileClick} />
             <ExpandedBtnDiv hide={!isExpanded}>
