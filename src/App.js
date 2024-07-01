@@ -6,19 +6,21 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import defaultTheme from './themes/defaultTheme';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-
+import { AuthProvider } from './contexts/AuthContext';
 
 const App = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <AuthProvider>
+      <ThemeProvider theme={defaultTheme}>
         <div>
           <Routes>
-            <Route path="/" element={ <Home /> } />
-            <Route path="/login" element={ <Login /> } />
-            <Route path="/signup" element={ <SignUp /> } />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 

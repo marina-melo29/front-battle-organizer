@@ -4,6 +4,7 @@ import { AppContainer, StyledFormButton, StyledH3 } from '../../components/Style
 import defaultTheme from '../../themes/defaultTheme';
 import Menu from '../../components/Menu';
 import SignUpContainer from '../../components/SignUp';
+import { useAuth } from '../../hooks/useAuth';
 
 const SignUp: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -11,6 +12,7 @@ const SignUp: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [confirmation_password, setPasswordConfirmation] = useState<string>('');
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -32,20 +34,19 @@ const SignUp: React.FC = () => {
 
       navigate('/');
     } else {
-      alert('Login Falhou');
+      alert('Falha ao Cadastrar!');
     }
   };
 
   const verifyAuth = async () => {
-    // todo: add auth verifing when route ON
-    if (false) {
+    if (isAuthenticated) {
       navigate('/');
     }
   };
 
   useEffect(() => {
     verifyAuth();
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <AppContainer theme={defaultTheme}>

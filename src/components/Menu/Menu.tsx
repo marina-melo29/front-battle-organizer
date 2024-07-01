@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Menu.css';
 import defaultTheme from '../../themes/defaultTheme';
 import { useNavigate } from 'react-router-dom';
-import { SeeMoreBtn, MenuButton, ExpandedBtnDiv, ExpandedLinks } from './StyledComponents'
+import { SeeMoreBtn, MenuButton, ExpandedBtnDiv, ExpandedLinks } from './StyledComponents';
+import { useAuth } from '../../hooks/useAuth';
 
 const Menu = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   const handleProfileClick = () => {
     setIsExpanded(prevState => !prevState);
@@ -17,28 +18,9 @@ const Menu = () => {
     navigate('/login');
   };
 
-  const isAuthenticated = async () => {
-    const token = localStorage.getItem('authToken');
-    const path = 'http://localhost:3000/is_authenticated';
-
-    const response = await fetch(path, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-    });
-
-    return response.ok;
+  const handleSignUpClick = () => {
+    navigate('/signup');
   };
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const auth = await isAuthenticated();
-      setAuthenticated(auth);
-    };
-    checkAuth();
-  }, []);
 
   return (
     <nav className="menu">
@@ -46,21 +28,25 @@ const Menu = () => {
         <h2>Battle Organizer</h2>
       </div>
       <div className="menu-links">
-      { authenticated ? (
+      { isAuthenticated ? (
           <>
             <SeeMoreBtn theme={defaultTheme} onClick={handleProfileClick} />
             <ExpandedBtnDiv hide={!isExpanded}>
-              {/* TODO: acrescentar os paths */}
               <ExpandedLinks onClick={() => navigate('/')}>Perfil</ExpandedLinks>
               {/* <ExpandedLinks onClick={() => navigate('/')}>Settings</ExpandedLinks> */}
               <ExpandedLinks onClick={() => navigate('/')}>Sair</ExpandedLinks>
             </ExpandedBtnDiv>
           </>
         ) : (
-          <MenuButton theme={defaultTheme} onClick={handleLoginClick}>
-            Login
-          </MenuButton>
-        )} 
+          <>
+            <MenuButton theme={defaultTheme} onClick={handleLoginClick}>
+              Entrar
+            </MenuButton>
+            <MenuButton theme={defaultTheme} onClick={handleSignUpClick}>
+              Cadastrar
+            </MenuButton>
+          </>
+        )}
       </div>
     </nav>
   );
