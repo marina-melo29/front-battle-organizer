@@ -26,7 +26,10 @@ export const ExpandedBtnDiv = styled.div<ExpandedBtnDivProps>`
   background-color: #41295f;
   position: fixed;
   box-shadow: 2px 1px 5px 1px #281540;
-  visibility: ${(props) => props.hide ? 'hidden' : 'visible' }
+  visibility: ${(props) => props.hide ? 'hidden' : 'visible' };
+  opacity: ${(props) => (props.hide ? 0 : 1)};
+  pointer-events: ${(props) => (props.hide ? 'none' : 'auto')};
+  transition: opacity 0.3s ease-in-out;
 `;
 
 interface ExpandedLinksProps {

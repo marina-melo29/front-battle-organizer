@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Menu.css';
 import defaultTheme from '../../themes/defaultTheme';
 import { useNavigate } from 'react-router-dom';
 import { SeeMoreBtn, MenuButton, ExpandedBtnDiv, ExpandedLinks } from './StyledComponents';
 import { useAuth } from '../../hooks/useAuth';
+import { logout } from '../../services/userService';
 
 const Menu = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, setIsAuthenticated } = useAuth();
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.expanded-btn-div')) {
+      setIsExpanded(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleProfileClick = () => {
     setIsExpanded(prevState => !prevState);
@@ -22,10 +37,17 @@ const Menu = () => {
     navigate('/signup');
   };
 
+  const handleLogout = async () => {
+    if (await logout()) {
+      setIsAuthenticated(false);
+      navigate('/');
+    }
+  };
+
   return (
     <nav className="menu">
       <div className="menu-logo">
-        <h2>Battle Organizer</h2>
+        <h2 onClick={() => navigate('/')}>Battle Organizer</h2>
       </div>
       <div className="menu-links">
       { isAuthenticated ? (
@@ -34,7 +56,7 @@ const Menu = () => {
             <ExpandedBtnDiv hide={!isExpanded}>
               <ExpandedLinks onClick={() => navigate('/')}>Perfil</ExpandedLinks>
               {/* <ExpandedLinks onClick={() => navigate('/')}>Settings</ExpandedLinks> */}
-              <ExpandedLinks onClick={() => navigate('/')}>Sair</ExpandedLinks>
+              <ExpandedLinks onClick={handleLogout}>Sair</ExpandedLinks>
             </ExpandedBtnDiv>
           </>
         ) : (
