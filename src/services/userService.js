@@ -15,3 +15,18 @@ export const isAuthenticated = async () => {
 
   return response.ok;
 };
+
+export const logout = async () => {
+  const token = localStorage.getItem('authToken');
+  const path = `${API_URL}/logout`;
+
+  const response = await fetch(path, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+  });
+
+  return response.ok;
+};
