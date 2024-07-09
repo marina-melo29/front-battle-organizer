@@ -7,6 +7,7 @@ import defaultTheme from './themes/defaultTheme';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import { AuthProvider } from './contexts/AuthContext';
+import Adventure from './pages/Adventure';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/adventures" element={<Adventure />} />
           </Routes>
         </div>
       </ThemeProvider>
