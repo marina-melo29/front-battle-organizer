@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Menu from "../../components/Menu"
-import { AppContainer } from '../../components/StyledComponents';
 import defaultTheme from "../../themes/defaultTheme";
+import { AppContainer, StyledFormButton, StyledH3 } from '../../components/StyledComponents';
 import './adventure.css'
 import { SaveAdventure } from '../../services/adventureService'
 const Adventure = () => {
@@ -30,7 +30,7 @@ const Adventure = () => {
           <textarea name="description" onChange={(e) => setDescription(e.target.value)} ></textarea  >
           <label htmlFor="url-icon">Imagem da aventura</label>
           <input accept="image/png, image/jpeg" type="file" name="url-icon" multiple onChange={(e) => setUrlIcon(e.target.files ? e.target.files[0] : null)} />
-          <input onClick={handleSaveAdventure} className="form-submit-button" type="button" value="Salvar" />
+          <StyledFormButton onClick={handleSaveAdventure} theme={defaultTheme} type="button">Salvar</StyledFormButton>
         </form>
       </div>
     </AppContainer>

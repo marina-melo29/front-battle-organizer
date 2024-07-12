@@ -22,20 +22,21 @@
   border-radius: 28px;
 }
 
-input {
+.generic-form input {
   margin-bottom: 20px;
   height: 32px;
-  font-size: 20px;
+  font-size: 12px;
   color: #41295f;
   font-weight: 800;
   border-radius: 5px;
   width: 80%;
+  border: 0px;
 }
 
 textarea {
   margin-bottom: 20px;
   height: 100px;
-  font-size: 20px;
+  font-size: 12px;
   color: #41295f;
   font-weight: 800;
   border-radius: 5px;
@@ -45,7 +46,7 @@ textarea {
 .form-submit-button {
   margin-bottom: 20px;
   height: 40px;
-  font-size: 20px;
+  font-size: 12px;
   color: #F6F3F3;
   font-weight: 800;
   width: 80%;
@@ -55,5 +56,5 @@ textarea {
 
 label {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 12px;
 }
