@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './list.css'
 import EditIcon from "../../assets/images/components/edit-icon.png"
 import DeleteIcon from "../../assets/images/components/delete-icon.png"
@@ -31,11 +31,16 @@ const ItemCard: React.FC<{ item: Item }> = ({ item }) => {
 
 const ItemList: React.FC<ItemListProps> = ({ items }) => {
     return (
+      <>
         <div className="Item-list">
-            {items.map(item => (
-                <ItemCard key={item.name} item={item} />
-            ))}
+          {items.map(item => (
+          <ItemCard key={item.name} item={item} />
+        ))}
         </div>
+      <div className="add-list-container">
+        <button className="Add-button">+</button>
+      </div>
+      </>
     );
 }
 

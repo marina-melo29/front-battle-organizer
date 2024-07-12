@@ -10,11 +10,13 @@ const itemsData = [
     { name: 'MONSTRO ELEFANTOGUN', image: 'monstro_elefantogun.png' }
 ];
 
+
 const AdventureList: React.FC = () => {
     return (
         <div className="adventure-list-container">
             <h1>Aventuras</h1>
-            <ItemList items={itemsData} />
+            <ItemList items={itemsData} >
+            </ItemList>
         </div>
     );
 }
