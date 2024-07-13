@@ -19,6 +19,7 @@ const AdventureForm = () => {
   };
 
   return (
+    <>
     <div className="generic-form-container">
       <form className="generic-form" id="adventure-form" action="/" method="post">
         <label htmlFor="name">Nome da Aventura</label>
@@ -30,6 +31,7 @@ const AdventureForm = () => {
         <StyledFormButton onClick={handleSaveAdventure} theme={defaultTheme} type="button">Salvar</StyledFormButton>
       </form>
     </div>
+    </>
   );
 };
 

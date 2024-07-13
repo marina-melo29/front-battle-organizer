@@ -6,6 +6,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  -ms-transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+  opacity: 1;
+  visibility: visible;
 }
 .add-adventures-container {
   background-color: brown;

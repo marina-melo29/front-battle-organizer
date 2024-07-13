@@ -9,6 +9,11 @@
   color: #41295f;
   font-weight: 800;
 }
+.go-back-icon {
+  height: 40px;
+  margin-left: 10vw;
+  cursor: pointer;
+}
 
 .generic-form {
   background-color: #F6F3F3;
