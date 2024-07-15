@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import './list.css';
+import React from 'react';
 import EditIcon from "../../assets/images/components/edit-icon.png";
 import DeleteIcon from "../../assets/images/components/delete-icon.png";
 import EyeIcon from "../../assets/images/components/eye-icon.png";
+import { GlobalStyle, ItemList as StyledItemList, ItemCard as StyledItemCard, ItemImage, ItemInfo, ItemName, ActionsContainer, ActionsIcons, AddButton, AddListContainer } from './StyledComponents';
+import defaultTheme from '../../themes/defaultTheme';
 
 interface Item {
     name: string;
@@ -20,26 +21,27 @@ interface ItemListProps {
 
 const ItemCard: React.FC<{ item: Item; onShowItem: (item: Item) => void; onEditItem: (item: Item) => void; onDeleteItem: (item: Item) => void; }> = ({ item, onShowItem, onEditItem, onDeleteItem }) => {
     return (
-        <div className={`Item-card ${item.hidden ? 'hidden' : ''}`}>
-            <img src={item.image} className="Item-image" alt={item.name} />
-            <div className="Item-info">
-                <h3 className={`Item-name 'highlight'}`}>{item.name}</h3>
-            </div>
-            <div className="actions-container">
-                <img src={EyeIcon} className="actions-icons" onClick={() => onShowItem(item)} />
-                <img src={EditIcon} className="actions-icons" onClick={() => onEditItem(item)} />
-                <img src={DeleteIcon} className="actions-icons" onClick={() => onDeleteItem(item)} />
-            </div>
-        </div>
+        <StyledItemCard>
+            <ItemImage src={item.image} alt={item.name} />
+            <ItemInfo>
+                <ItemName>{item.name}</ItemName>
+            </ItemInfo>
+            <ActionsContainer>
+                <ActionsIcons as="img" src={EyeIcon} onClick={() => onShowItem(item)} />
+                <ActionsIcons as="img" src={EditIcon} onClick={() => onEditItem(item)} />
+                <ActionsIcons as="img" src={DeleteIcon} onClick={() => onDeleteItem(item)} />
+            </ActionsContainer>
+        </StyledItemCard>
     );
 }
 
 const ItemList: React.FC<ItemListProps> = ({ items, onAddItem, onEditItem, onShowItem, onDeleteItem }) => {
     return (
         <>
-            <div className="Item-list">
+            <GlobalStyle />
+            <StyledItemList theme={defaultTheme} >
                 {items.map(item => (
-                    <ItemCard
+                    < ItemCard
                         key={item.name}
                         item={item}
                         onShowItem={onShowItem}
@@ -47,10 +49,10 @@ const ItemList: React.FC<ItemListProps> = ({ items, onAddItem, onEditItem, onSho
                         onDeleteItem={onDeleteItem}
                     />
                 ))}
-            </div>
-            <div className="add-list-container">
-                <button className="Add-button" onClick={onAddItem}>+</button>
-            </div>
+            </StyledItemList>
+            <AddListContainer theme={defaultTheme} >
+                <AddButton theme={defaultTheme} onClick={onAddItem}>+</AddButton>
+            </AddListContainer>
         </>
     );
 }

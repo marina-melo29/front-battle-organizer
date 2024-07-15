@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   position: relative;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -14,9 +14,9 @@
   opacity: 1;
   visibility: visible;
 }
+
 .add-adventures-container {
   background-color: brown;
   height: 5vh;
   width: 100%;
-
 }
