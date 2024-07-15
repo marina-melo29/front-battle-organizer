@@ -13,7 +13,8 @@ const Menu = () => {
 
   const handleClickOutside = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
-    if (!target.closest('.expanded-btn-div')) {
+
+    if (target.closest('.expanded-btn-div') === null) {
       setIsExpanded(false);
     }
   };
@@ -53,7 +54,7 @@ const Menu = () => {
       { isAuthenticated ? (
           <>
             <SeeMoreBtn theme={defaultTheme} onClick={handleProfileClick} />
-            <ExpandedBtnDiv hide={!isExpanded}>
+            <ExpandedBtnDiv hide={!isExpanded} className='expanded-btn-div'>
               <ExpandedLinks onClick={() => navigate('/')}>Perfil</ExpandedLinks>
               {/* <ExpandedLinks onClick={() => navigate('/')}>Settings</ExpandedLinks> */}
               <ExpandedLinks onClick={handleLogout}>Sair</ExpandedLinks>
