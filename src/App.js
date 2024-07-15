@@ -12,15 +12,13 @@ const App = () => {
   return (
     <AuthProvider>
       <ThemeProvider theme={defaultTheme}>
-        {/* PUBLIC */}
         <Routes>
+          {/* PUBLIC */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-        </Routes>
 
-        {/* PRIVATE */}
-        <Routes>
+          {/* PRIVATE */}
           <Route element={<PrivateRoutes />}>
             {/* PRIVATE routes */}
           </Route>
