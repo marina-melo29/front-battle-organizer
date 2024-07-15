@@ -45,6 +45,7 @@ export const ItemCard = styled.div<ListProps>`
 
   &:hover {
     transform: translateY(-5px);
+    opacity: .9;
   }
 `;
 

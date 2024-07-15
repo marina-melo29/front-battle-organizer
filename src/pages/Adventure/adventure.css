@@ -1,3 +1,7 @@
-.form-adventure-container {
-
+.go-back-icon {
+  position: relative;
+  width: 2vw;
+  height: auto;
+  left: 21vw;
+  cursor: pointer;
 }

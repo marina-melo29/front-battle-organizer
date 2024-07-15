@@ -16,6 +16,12 @@ const Adventure = () => {
     setShowForm(true);
   };
 
+  const GoBack = (screen: string) => {
+    if (screen == "AdventureList") {
+      setShowForm(false);
+    }
+  }
+
   return (
     <AppContainer theme={defaultTheme}>
       <Menu />
@@ -32,9 +38,5 @@ const Adventure = () => {
 };
 
 
-const GoBack = (screen: string) => {
-  if (screen == "AdventureList") {
 
-  }
-}
 export default Adventure;
