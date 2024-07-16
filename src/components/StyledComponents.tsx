@@ -25,6 +25,10 @@ export const Footer = styled.footer<AppContainerProps>`
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @media (max-width: 600px) {
+    min-height: 20px;
+  }
 `;
 
 interface SectionProps {
@@ -128,5 +132,5 @@ export const PresentationImage = styled.div<AppContainerProps>`
   height: 500px;
   background-repeat: no-repeat;
   width: auto;
-  background-position: right;  
+  background-position: right;
 `;
