@@ -14,3 +14,9 @@
   margin: 0;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .menu-logo h2 {
+    font-size: small;
+  }
+}
