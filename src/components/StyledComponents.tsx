@@ -29,6 +29,10 @@ export const Footer = styled.footer<AppContainerProps>`
   @media (max-width: 600px) {
     min-height: 20px;
   }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    min-height: 25px;
+  }
 `;
 
 interface SectionProps {

@@ -29,7 +29,7 @@
 @media (max-width: 600px) {
   .battle-container {
     max-width: 90vw;
-    min-height: 50vw;
+    min-height: 70vw;
   }
 
   .footer {
