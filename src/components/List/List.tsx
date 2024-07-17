@@ -41,7 +41,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onAddItem, onEditItem, onSho
         <>
             <GlobalStyle />
             <StyledItemList theme={defaultTheme} >
-                {items.map(item => (
+                {items?.map(item => (
                     < ItemCard
                         key={item.name}
                         item={item}
