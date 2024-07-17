@@ -5,6 +5,7 @@ import ConfirmationModal from '../../Modal/ConfirmationModal';
 
 interface AdventureListProps {
     onShowForm: () => void;
+    onEditItem: (item: any) => void;
 }
 
 const itemsData = [
@@ -27,9 +28,13 @@ function onShowItem(item: any) {
     console.log("Mostrar item:", item);
 }
 
-const AdventureList: React.FC<AdventureListProps> = ({ onShowForm }) => {
+const AdventureList: React.FC<AdventureListProps> = ({ onShowForm, onEditItem }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<any>(null);
+
+    const handleEditClick = (item: any) => {
+        onEditItem(item);
+    };
 
     const openModal = (item: any) => {
         setSelectedItem(item);
