@@ -38,10 +38,6 @@ const Adventure = () => {
     setShowEditItem(false);
   };
 
-  const [editMode, setEditMode] = useState(false);
-  const [itemId, setItemId] = useState('');
-  const [goBack, setGoBack] = useState("");
-
   return (
     <AppContainer theme={defaultTheme}>
       <Menu />

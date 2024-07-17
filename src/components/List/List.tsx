@@ -6,6 +6,7 @@ import { GlobalStyle, ItemList as StyledItemList, ItemCard as StyledItemCard, It
 import defaultTheme from '../../themes/defaultTheme';
 
 interface Item {
+    id: string;
     name: string;
     image: string;
     hidden?: boolean;
@@ -21,7 +22,7 @@ interface ItemListProps {
 
 const ItemCard: React.FC<{ item: Item; onShowItem: (item: Item) => void; onEditItem: (item: Item) => void; onDeleteItem: (item: Item) => void; }> = ({ item, onShowItem, onEditItem, onDeleteItem }) => {
     return (
-        <StyledItemCard>
+        <StyledItemCard id={item.id}>
             <ItemImage src={item.image} alt={item.name} />
             <ItemInfo>
                 <ItemName>{item.name}</ItemName>

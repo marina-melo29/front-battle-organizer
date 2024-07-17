@@ -9,11 +9,11 @@ interface AdventureListProps {
 }
 
 const itemsData = [
-    { name: 'Monkey D. Luffy', image: 'luffy.png' },
-    { name: 'Jorge Bat', image: 'jorge_bat.png' },
-    { name: 'Chopper', image: 'chopper.png' },
-    { name: 'Cacatua', image: 'cacatua.png' },
-    { name: 'MONSTRO ELEFANTOGUN', image: 'monstro_elefantogun.png' }
+    { id: '1120', name: 'Monkey D. Luffy', image: 'luffy.png' },
+    { id: '140', name: 'Jorge Bat', image: 'jorge_bat.png' },
+    { id: '160', name: 'Chopper', image: 'chopper.png' },
+    { id: '119', name: 'Cacatua', image: 'cacatua.png' },
+    { id: '1199', name: 'MONSTRO ELEFANTOGUN', image: 'monstro_elefantogun.png' }
 ];
 
 function onAddItem() {
@@ -32,10 +32,6 @@ const AdventureList: React.FC<AdventureListProps> = ({ onShowForm, onEditItem })
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<any>(null);
 
-    const handleEditClick = (item: any) => {
-        onEditItem(item);
-    };
-
     const openModal = (item: any) => {
         setSelectedItem(item);
         setIsModalOpen(true);
@@ -47,12 +43,11 @@ const AdventureList: React.FC<AdventureListProps> = ({ onShowForm, onEditItem })
     };
 
     const handleDeleteItem = () => {
-        console.log("Deletar item:", selectedItem);
+        document.getElementById(selectedItem.id)?.remove();
         closeModal();
     };
 
     function onDeleteItem(item: any) {
-        console.log("Deletar item:", item);
         openModal(item);
     }
 
