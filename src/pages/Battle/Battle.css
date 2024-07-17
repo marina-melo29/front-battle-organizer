@@ -15,7 +15,11 @@
 @media (min-width: 901px) {
   .battle-container {
     max-width: 70vw;
-    min-height: 500px;
+    min-height: 28vw;
+  }
+
+  #players-card-container {
+    align-self: flex-start;
   }
 }
 
