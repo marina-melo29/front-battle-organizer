@@ -44,14 +44,14 @@ const Adventure = () => {
       {showForm && (
         <>
           <img src={ArrowBack} className="go-back-icon" onClick={handleGoBack} />
-          <AdventureForm />
+          <AdventureForm handleSave={handleGoBack} />
         </>
       )}
       {showList && <AdventureList onShowForm={handleShowForm} onEditItem={handleEditItem} />}
       {showEditItem && (
         <>
           <img src={ArrowBack} className="go-back-icon" onClick={handleGoBack} />
-          <AdventureEdit item={selectedItem} />
+          <AdventureEdit item={selectedItem} handleSave={handleGoBack} />
         </>
       )}
     </AppContainer>

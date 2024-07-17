@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import defaultTheme from "../../../themes/defaultTheme";
 import { GenericFormContainer, GenericForm, FormSubmitButton, Label } from "./StyledComponents";
+import { MenuTitle } from "../../StyledComponents";
 
 import { SaveAdventure } from "../../../services/adventureService";
+interface AdventureFormProps {
+  handleSave: () => void;
+}
 
-const AdventureForm = () => {
+const AdventureForm: React.FC<AdventureFormProps> = ({ handleSave }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [urlIcon, setUrlIcon] = useState<File | null>(null);
@@ -14,6 +18,7 @@ const AdventureForm = () => {
 
     if (result.success) {
       alert(result.message);
+      handleSave()
     } else {
       alert(result.message);
     }
@@ -21,6 +26,7 @@ const AdventureForm = () => {
 
   return (
     <GenericFormContainer theme={defaultTheme}>
+      <MenuTitle theme={defaultTheme}>Criar Aventura</MenuTitle>
       <GenericForm theme={defaultTheme} id="adventure-form" action="/" method="post">
         <Label theme={defaultTheme} htmlFor="name">Nome da Aventura</Label>
         <input name="name" type="text" onChange={(e) => setName(e.target.value)} />

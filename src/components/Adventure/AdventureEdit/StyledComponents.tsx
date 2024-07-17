@@ -13,6 +13,7 @@ export const GenericFormContainer = styled.div<AdventureFormProps>`
   align-items: center;
   justify-content: center;
   border-radius: 28px;
+  flex-direction: column;
   padding: 10px;
   color: #41295f;
   font-weight: 800;

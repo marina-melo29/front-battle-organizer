@@ -44,7 +44,7 @@ interface HeaderProps {
 }
 
 const createStyledHeader = (element: keyof JSX.IntrinsicElements) => {
-  return styled(element)<HeaderProps>`
+  return styled(element) <HeaderProps>`
     color: ${(props) => props.color || '#422b5e'};
     font-family: ${(props) => props.baseFontFamily || 'Poppins'};
   `;
@@ -129,4 +129,11 @@ export const PresentationImage = styled.div<AppContainerProps>`
   background-repeat: no-repeat;
   width: auto;
   background-position: right;  
+`;
+
+export const MenuTitle = styled.label`
+  color: ${(props) => props.theme.whiteColor};
+  font-weight: 800;
+  font-size: 4vh;
+  font-family: ${(props) => props.theme.baseFontFamily};
 `;

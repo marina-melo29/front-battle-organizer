@@ -16,13 +16,6 @@ const itemsData = [
     { id: '1199', name: 'MONSTRO ELEFANTOGUN', image: 'monstro_elefantogun.png' }
 ];
 
-function onAddItem() {
-    console.log("Item adicionado");
-}
-
-function onEditItem(item: any) {
-    console.log("Editar item:", item);
-}
 
 function onShowItem(item: any) {
     console.log("Mostrar item:", item);
