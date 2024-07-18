@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import './OrderingCard.css';
 import defaultTheme from '../../themes/defaultTheme';
 import { Card, CardRow } from './StyledComponents';
 
@@ -7,11 +8,10 @@ interface CardProps {
 }
 
 const OrderingCard: React.FC<CardProps> = ({ children }) => {
-  console.log(children);
   return (
     <Card theme={defaultTheme}>
       {React.Children.map(children, (child) => (
-        <CardRow>{child}</CardRow>
+        <CardRow theme={defaultTheme}>{child}</CardRow>
       ))}
     </Card>
   );

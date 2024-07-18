@@ -13,6 +13,7 @@ export interface Theme {
   homePresentationImage: string;
   baseMenuColor: string;
   seeMoreImage: string;
+  cardsBorderColor: string;
 }
 
 const defaultTheme: Theme = {
@@ -34,7 +35,11 @@ const defaultTheme: Theme = {
 
   // home
 
-  homePresentationImage: homePresentationImage
+  homePresentationImage: homePresentationImage,
+
+  // OrderingCard Component
+
+  cardsBorderColor: '#e4dce5',
 };
 
 export default defaultTheme;
