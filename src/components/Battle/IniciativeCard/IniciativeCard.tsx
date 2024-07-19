@@ -14,7 +14,8 @@ const HandleBgColor = () => {
 
 const IniciativeCard: React.FC<CardProps> = ({ children }) => {
   return (
-    <Card theme={defaultTheme} className='iniciative-card-component' cardBgColor={HandleBgColor()}>
+    <Card theme={defaultTheme} className='iniciative-card-component custom-scrollbar'
+          cardBgColor={HandleBgColor()}>
       {React.Children.map(children, (child) => (
         <IniciativeCardRow theme={defaultTheme}>{child}</IniciativeCardRow>
       ))}

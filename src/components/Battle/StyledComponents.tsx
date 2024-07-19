@@ -16,6 +16,7 @@ export const Card = styled.div<CardContainerProps>`
   box-shadow: 4px 4px 8px 2px #B9B7BD;
   color: #422b5e;
   overflow-y: auto;
+  padding: 3px;
   // background-color: #563383;
   background-color: ${(props) => props.cardBgColor || '#ffffff'};
 
@@ -41,6 +42,11 @@ export const CardRow = styled.div<CardContainerProps>`
   margin-top: 15px;
   padding: 10px;
   background-color: #e2deeb;
+  cursor: grab;
+
+  &:hover {
+    background-color: #d8cfeb;
+  }
 
   div {
     display: flex;
@@ -78,6 +84,11 @@ export const IniciativeCardRow = styled.div<CardContainerProps>`
   margin-top: 15px;
   padding: 10px;
   background-color: #e2deeb;
+  cursor: grab;
+
+  &:hover {
+    background-color: #d8cfeb;
+  }
 
   div {
     display: flex;

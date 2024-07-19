@@ -6,3 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.custom-scrollbar {
+  padding-right: 15px;
+  box-sizing: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6a4b94;
+  border-radius: 10px;
+  border: 2px solid #d5d1df;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #d5d1df;
+  border-radius: 10px;
+}
