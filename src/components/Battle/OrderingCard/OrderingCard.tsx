@@ -9,7 +9,7 @@ interface CardProps {
 
 const OrderingCard: React.FC<CardProps> = ({ children }) => {
   return (
-    <Card theme={defaultTheme}>
+    <Card theme={defaultTheme} className='players-card-component'>
       {React.Children.map(children, (child) => (
         <CardRow theme={defaultTheme}>{child}</CardRow>
       ))}

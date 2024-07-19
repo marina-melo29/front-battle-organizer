@@ -3,6 +3,10 @@
     font-size: medium;
     max-height: 28px;
   }
+
+  .players-card-component {
+    margin: 2.5em;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {

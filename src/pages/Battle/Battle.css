@@ -3,7 +3,7 @@
   width: 100%;
   position:absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   padding-bottom: 50px;
   padding-top: 40px;
@@ -20,6 +20,10 @@
 
   #players-card-container {
     align-self: flex-start;
+  }
+
+  #iniciative-card-container {
+    align-self: baseline;
   }
 }
 

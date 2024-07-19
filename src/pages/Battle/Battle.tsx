@@ -2,7 +2,8 @@ import React from 'react';
 import Menu from '../../components/Menu';
 import './Battle.css';
 import { AppContainer, AppSection, Footer } from '../../components/StyledComponents';
-import OrderingCard from '../../components/Battle/OrderingCard';
+import OrderingCard from '../../components/Battle/OrderingCard/OrderingCard';
+import IniciativeCard from '../../components/Battle/IniciativeCard/IniciativeCard';
 import defaultTheme from '../../themes/defaultTheme';
 
 const Battle = () => {
@@ -34,6 +35,24 @@ const Battle = () => {
                 <span className='character-iniciative-bonus'>+5</span>
               </div>
             </OrderingCard>
+          </div>
+          <div id="iniciative-card-container">
+            <IniciativeCard>
+              <div>
+                <span className='character-name'>Juao</span>
+                <div className='character-iniciative'>
+                  <span>20</span>
+                </div>
+                <span className='character-class'>Barbarian</span>
+              </div>
+              <div>
+                <span className='character-name'>Marco</span>
+                <div className='character-iniciative'>
+                  <span>16</span>
+                </div>
+                <span className='character-class'>Paladin</span>
+              </div>
+            </IniciativeCard>
           </div>
         </div>
       </AppSection>
