@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import './OrderingCard.css';
+import './PlayersCard.css';
 import defaultTheme from '../../../themes/defaultTheme';
 import { Card, CardRow } from '../StyledComponents';
 
