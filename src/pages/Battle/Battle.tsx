@@ -1,40 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Menu from '../../components/Menu';
 import './Battle.css';
 import { AppContainer, AppSection, Footer } from '../../components/StyledComponents';
-import OrderingCard from '../../components/Battle/OrderingCard/OrderingCard';
+import PlayersCard from '../../components/Battle/PlayersCard/PlayersCard';
 import IniciativeCard from '../../components/Battle/IniciativeCard/IniciativeCard';
 import defaultTheme from '../../themes/defaultTheme';
+import { getCharacters } from '../../services/battleService';
+import DeletingBox from '../../components/svg/DeletingBox';
+
+interface Character {
+  id: number;
+  name: string;
+  class?: string;
+  iniciative?: number;
+}
 
 const Battle = () => {
+  const [characters, setCharacters] = React.useState<Character[]>([]);
+
+  const handleGetCharacters = async () => {
+    const response = await getCharacters();
+
+    if (response.characters) {
+      console.log(response.characters);
+      setCharacters(response.characters);
+    } else {
+      return [];
+    }
+  }
+
+  useEffect(() => {
+    handleGetCharacters();
+  }, []);
+
   return (
     <AppContainer theme={defaultTheme}>
       <Menu />
       <AppSection align_conf='column' className="section">
         <div className='battle-container'>
           <div id="players-card-container">
-            <OrderingCard>
-              <div>
-                <span className='character-name'>Juao</span>
-                <span className='character-class'>Barbarian</span>
-                <span className='character-iniciative-bonus'>+2</span>
-              </div>
-              <div>
-                <span className='character-name'>Marco</span>
-                <span className='character-class'>Paladin</span>
-                <span className='character-iniciative-bonus'>+1</span>
-              </div>
-              <div>
-                <span className='character-name'>Pedro Pedro Pedro Pedro</span>
-                <span className='character-class'>Wizard</span>
-                <span className='character-iniciative-bonus'>+0</span>
-              </div>
-              <div>
-                <span className='character-name'>Bob</span>
-                <span className='character-class'>Monk</span>
-                <span className='character-iniciative-bonus'>+5</span>
-              </div>
-            </OrderingCard>
+            <PlayersCard>
+              {characters.map((character) => (
+                <div key={character.id}>
+                  <span className='character-name'>{character.name || 'TengoLengo'}</span>
+                  <span className='character-class'>{character.class || 'SemClasse'}</span>
+                  <span className='character-iniciative-bonus'>{ '+' + character.iniciative || '+0'}</span>
+                  <DeletingBox />
+                </div>
+              ))}
+            </PlayersCard>
           </div>
           <div id="iniciative-card-container">
             <IniciativeCard>
