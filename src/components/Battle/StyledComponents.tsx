@@ -17,7 +17,7 @@ export const Card = styled.div<CardContainerProps>`
   color: #422b5e;
   overflow-y: auto;
   padding: 3px;
-  // background-color: #563383;
+  padding-bottom: 3em;
   background-color: ${(props) => props.cardBgColor || '#ffffff'};
 
   @media (min-width: 601px) and (max-width: 900px) {
