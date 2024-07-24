@@ -21,7 +21,7 @@ const App = () => {
 
           {/* PRIVATE */}
           <Route element={<PrivateRoute element={<Battle />} />}>
-            <Route path="/battle" element={<Battle />} />
+            <Route path="/battle/:adventure_id" element={<Battle />} />
           </Route>
         </Routes>
       </ThemeProvider>
