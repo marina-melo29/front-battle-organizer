@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import Menu from '../../components/Menu';
 import { useParams } from 'react-router-dom';
 import './Battle.css';
-import { AppContainer, AppSection, Footer, StyledH1 } from '../../components/StyledComponents';
+import { AppContainer, AppSection, Footer, StyledH1, StyledH3 } from '../../components/StyledComponents';
 import PlayersCard from '../../components/Battle/PlayersCard/PlayersCard';
 import IniciativeCard from '../../components/Battle/IniciativeCard/IniciativeCard';
 import defaultTheme from '../../themes/defaultTheme';
 import { getCharacters, getAdventure } from '../../services/battleService';
-import DeletingBox from '../../components/svg/DeletingBox';
+import Edit from '../../components/svg/Edit';
 
 interface Adventure {
   id: number;
@@ -61,9 +61,13 @@ const Battle = () => {
       <AppSection align_conf='column' className="section">
         <div className='battle-container'>
           <div className='battle-header'>
-            <StyledH1>{adventure?.name || 'Escolha um nome'}</StyledH1>
+            <div className='battle-title'>
+              <StyledH1>{adventure?.name || 'Escolha um nome'}</StyledH1>
+            </div>
+            <div className='edit-icon'><Edit /></div>
           </div>
           <div id='players-card-container'>
+            <StyledH3>Jogadores</StyledH3>
             <PlayersCard>
               {characters.map((character) => (
                 <div key={character.id}>
@@ -75,6 +79,7 @@ const Battle = () => {
             </PlayersCard>
           </div>
           <div id='iniciative-card-container'>
+            <StyledH3>Iniciativa</StyledH3>
             <IniciativeCard>
               <div>
                 <span className='character-name'>Juao</span>
@@ -91,6 +96,12 @@ const Battle = () => {
                 <span className='character-class'>Paladin</span>
               </div>
             </IniciativeCard>
+          </div>
+          <div id='npc-card-container'>
+            <StyledH3>NPCs e Monstros</StyledH3>
+            <PlayersCard>
+              ''
+            </PlayersCard>
           </div>
         </div>
       </AppSection>
