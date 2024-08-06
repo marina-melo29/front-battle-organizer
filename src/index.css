@@ -27,3 +27,23 @@ body {
   background: #d5d1df;
   border-radius: 10px;
 }
+
+.confirm-icon {
+  fill: rgb(7, 95, 7);
+  transition: fill 0.5s;
+}
+
+.confirm-icon:hover {
+  fill: rgb(12, 169, 12);
+  transition: fill 0.3s;
+}
+
+.close-icon {
+  fill: rgb(135, 7, 7);
+  transition: fill 0.5s;
+}
+
+.close-icon:hover {
+  fill: red;
+  transition: fill 0.3s;
+}

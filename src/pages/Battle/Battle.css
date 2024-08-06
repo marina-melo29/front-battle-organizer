@@ -20,21 +20,35 @@
   justify-content: space-between;
 }
 
-.edit-icon {
+.edit-icons {
   cursor: pointer;
+  display: flex;
 }
 
-.edit-icon svg:hover {
+#edit-title-icon svg:hover {
   fill: blueviolet;
 }
 
-.edit-icon:hover ~ .battle-title {
+#edit-title-icon:hover ~ .battle-title {
   border-bottom: 1px solid blueviolet;
   background-color: #e4dce5;
 }
 
 h3 {
   text-align: center;
+}
+
+#battle-title-input[contenteditable="true"] {
+  border: 1px solid #6a4b94;
+  background-color: #e4dce5;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#battle-title-input[contenteditable="true"]:focus {
+  outline: none;
+  border: 2px solid blueviolet;
 }
 
 @media (min-width: 901px) {
@@ -51,8 +65,12 @@ h3 {
     margin-bottom: 25px;
   }
 
-  .edit-icon {
+  .edit-icons {
     align-self: center;
+  }
+
+  .edit-icons > span {
+    padding: 5px;
   }
 
   #players-card-container {
@@ -61,6 +79,10 @@ h3 {
 
   #iniciative-card-container {
     align-self: baseline;
+  }
+
+  #battle-title-input[contenteditable="true"] {
+    min-width: 60vw;
   }
 }
 
