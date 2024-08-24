@@ -37,3 +37,24 @@ export const getAdventure = async (id) => {
     throw new Error('Failed to get adventure');
   }
 };
+
+export const updateAdventure = async (params) => {
+  const token = localStorage.getItem('authToken');
+  const path = `${API_URL}/adventure`;
+
+  const response = await fetch(path, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(params),
+  });
+
+  if (response.ok) {
+    const text = await response.text();
+    return text ? JSON.parse(text) : {};
+  } else {
+    throw new Error('Failed to set adventure');
+  }
+};

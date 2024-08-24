@@ -53,8 +53,8 @@ interface HeaderProps {
 
 const createStyledHeader = (element: keyof JSX.IntrinsicElements) => {
   return styled(element)<HeaderProps>`
-    color: ${(props) => props.color || '#422b5e'};
-    font-family: ${(props) => props.baseFontFamily || 'Poppins'};
+    color: ${(props) => props.color || '#422b5e'} !important;
+    font-family: ${(props) => props.baseFontFamily || 'Poppins'} !important;
   `;
 };
 

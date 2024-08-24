@@ -42,7 +42,6 @@ export const CardRow = styled.div<CardContainerProps>`
   margin-top: 15px;
   padding: 10px;
   background-color: #e2deeb;
-  cursor: grab;
 
   &:hover {
     background-color: #d8cfeb;
@@ -63,12 +62,12 @@ export const CardRow = styled.div<CardContainerProps>`
   }
 
   .character-class{
-    width: 40%;
-    text-align: end;
+    width: 50%;
+    text-align: start;
   }
 
   .character-iniciative-bonus {
-    width: 100%;
+    width: 50%;
     text-align: end;
   }
 `;
@@ -84,7 +83,6 @@ export const IniciativeCardRow = styled.div<CardContainerProps>`
   margin-top: 15px;
   padding: 10px;
   background-color: #e2deeb;
-  cursor: grab;
 
   &:hover {
     background-color: #d8cfeb;

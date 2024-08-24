@@ -35,18 +35,19 @@
 }
 
 h3 {
-  text-align: center;
+  text-align: center !important;
 }
 
-#battle-title-input[contenteditable="true"] {
+#editable-battle-title[contenteditable="true"] {
   border: 1px solid #6a4b94;
   background-color: #e4dce5;
   padding: 7px;
   padding-left: 15px;
   padding-right: 15px;
+  border-radius: 5px;
 }
 
-#battle-title-input[contenteditable="true"]:focus {
+#editable-battle-title[contenteditable="true"]:focus {
   outline: none;
   border: 2px solid blueviolet;
 }
@@ -81,7 +82,7 @@ h3 {
     align-self: baseline;
   }
 
-  #battle-title-input[contenteditable="true"] {
+  #editable-battle-title[contenteditable="true"] {
     min-width: 60vw;
   }
 }

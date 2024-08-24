@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
-import './assets/styles/global.css';
 import { ThemeProvider } from './contexts/ThemeContext';
 import defaultTheme from './themes/defaultTheme';
 import Login from './pages/Login';
