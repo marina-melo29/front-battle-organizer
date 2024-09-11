@@ -25,6 +25,14 @@ export const Footer = styled.footer<AppContainerProps>`
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @media (max-width: 600px) {
+    min-height: 20px;
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    min-height: 25px;
+  }
 `;
 
 interface SectionProps {
@@ -45,8 +53,8 @@ interface HeaderProps {
 
 const createStyledHeader = (element: keyof JSX.IntrinsicElements) => {
   return styled(element)<HeaderProps>`
-    color: ${(props) => props.color || '#422b5e'};
-    font-family: ${(props) => props.baseFontFamily || 'Poppins'};
+    color: ${(props) => props.color || '#422b5e'} !important;
+    font-family: ${(props) => props.baseFontFamily || 'Poppins'} !important;
   `;
 };
 
@@ -128,5 +136,5 @@ export const PresentationImage = styled.div<AppContainerProps>`
   height: 500px;
   background-repeat: no-repeat;
   width: auto;
-  background-position: right;  
+  background-position: right;
 `;

@@ -1,0 +1,38 @@
+@media (min-width: 901px) {
+  .character-name, .character-class {
+    font-size: medium;
+    max-height: 28px;
+  }
+
+  .iniciative-card-component {
+    margin: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .character-name, .character-class {
+    font-size: smaller;
+    max-height: 20px;
+  }
+
+  .iniciative-card-component {
+    margin: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .character-name, .character-class {
+    font-size: x-small;
+    max-height: 20px;
+  }
+
+  .iniciative-card-component {
+    margin: 1.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+  }
+}

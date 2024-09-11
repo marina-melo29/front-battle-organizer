@@ -12,6 +12,11 @@ export const SeeMoreBtn = styled.div<MenuProps>`
   width: 30px;
   position: relative;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 interface ExpandedBtnDivProps {
@@ -30,6 +35,7 @@ export const ExpandedBtnDiv = styled.div<ExpandedBtnDivProps>`
   opacity: ${(props) => (props.hide ? 0 : 1)};
   pointer-events: ${(props) => (props.hide ? 'none' : 'auto')};
   transition: opacity 0.3s ease-in-out;
+  z-index: 2;
 `;
 
 interface ExpandedLinksProps {
