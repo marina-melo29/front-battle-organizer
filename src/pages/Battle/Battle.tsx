@@ -10,6 +10,7 @@ import { getCharacters, getAdventure, updateAdventure } from "../../services/bat
 import Edit from "../../components/svg/Edit";
 import Check from "../../components/svg/Check";
 import Close from "../../components/svg/Close";
+import { openPlayersEditingMode, cancelPlayersEditing, confirmPlayersEditing } from "../../utils/battle";
 
 interface Adventure {
   id: number;
@@ -133,12 +134,26 @@ const Battle = () => {
             <StyledH3>Jogadores</StyledH3>
             <PlayersCard>
               {characters.map((character) => (
-                <div key={character.id}>
+                <div key={character.id} className="card-container">
+                  <div className="players-edit-icons">
+                    <span className="edit-icon"
+                          onClick={(event) => openPlayersEditingMode(event.target as HTMLElement)}>
+                      <Edit />
+                    </span>
+                    <span className="confirm-players-editing confirm-icon"
+                          onClick={(event) => confirmPlayersEditing(event.target as HTMLElement)} hidden>
+                      <Check />
+                    </span>
+                    <span className="cancel-players-editing close-icon"
+                          onClick={(event) => cancelPlayersEditing(event.target as HTMLElement)} hidden>
+                      <Close />
+                    </span>
+                  </div>
                   <span className="character-name">{character.name || "TengoLengo"}</span>
-                  <input type="hidden" name="character-name" value={character.name} />
+                  <input type="hidden" name="character-name" value={character.name} placeholder="Digite um Nome" />
 
                   <span className="character-class">{character.class || "SemClasse"}</span>
-                  <input type="hidden" name="character-class" value={character.class} />
+                  <input type="hidden" name="character-class" value={character.class} placeholder="Digite uma classe" />
 
                   <span className="character-iniciative-bonus">{ "+" + character.iniciative || "+0"}</span>
                   <input type="hidden" name="character-iniciative-bonus" value={character.iniciative} />

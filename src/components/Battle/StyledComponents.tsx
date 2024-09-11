@@ -43,9 +43,9 @@ export const CardRow = styled.div<CardContainerProps>`
   padding: 10px;
   background-color: #e2deeb;
 
-  &:hover {
-    background-color: #d8cfeb;
-  }
+  // &:hover {
+  //   background-color: #d8cfeb;
+  // }
 
   div {
     display: flex;

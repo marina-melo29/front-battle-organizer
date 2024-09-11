@@ -1,3 +1,12 @@
+.players-edit-icons {
+  justify-content: end;
+
+  .edit-icon, .confirm-icon, .close-icon {
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
 .battle-container {
   background-color: #e4dce5;
   width: 100%;
