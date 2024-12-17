@@ -6,10 +6,13 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import defaultTheme from './themes/defaultTheme';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Adventure from './pages/Adventure';
 import { AuthProvider, AuthContext } from './contexts/AuthContext';
 
 const App = () => {
+
   return (
+    // Precisamos carregar primeiro AuthProvider
     <AuthProvider>
       <ThemeProvider theme={defaultTheme}>
         <Routes>
@@ -19,8 +22,8 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
 
           {/* PRIVATE */}
-          <Route element={<PrivateRoutes />}>
-            {/* PRIVATE routes */}
+          <Route element={<PrivateRoute element={<Adventure />} />}>
+            <Route path="/adventures" element={<Adventure />} />
           </Route>
         </Routes>
       </ThemeProvider>
@@ -28,12 +31,14 @@ const App = () => {
   );
 };
 
-const PrivateRoutes = () => {
+const PrivateRoute = (param) => {
   const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
   if (!isAuthenticated) {
     return navigate("/login");
+  } else {
+    return param['element'];
   }
 };
 

@@ -13,6 +13,8 @@ export interface Theme {
   homePresentationImage: string;
   baseMenuColor: string;
   seeMoreImage: string;
+  secondaryColor: string;
+  whiteColor: string;
 }
 
 const defaultTheme: Theme = {
@@ -22,6 +24,8 @@ const defaultTheme: Theme = {
   buttonBgColor: '#d5d5d5',
   buttonHoverBgColor: '#3f295b',
   baseMenuColor: '#281540',
+  secondaryColor: '#f3e8ff',
+  whiteColor: '#F6F3F3',
 
   // Form styles
 
